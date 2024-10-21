@@ -1,9 +1,15 @@
+*{
+  font-family: "karla", sans-serif;
+}
+
 html {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 body {
   position: relative;
-  font-family: sans-serif;
-  overflow-y: hidden;
+  font-family: 'Inter', sans-serif;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: rgba(95, 25, 136, 0.8) !important;
 }
