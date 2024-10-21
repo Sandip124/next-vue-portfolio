@@ -1,0 +1,9 @@
+html {
+  font-size: 13px;
+}
+
+body {
+  position: relative;
+  font-family: sans-serif;
+  overflow-y: hidden;
+}

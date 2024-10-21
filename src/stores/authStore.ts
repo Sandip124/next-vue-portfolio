@@ -1,0 +1,3 @@
+export function useAuthStore() {
+// TODO
+}

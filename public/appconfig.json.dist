@@ -1,0 +1,4 @@
+{
+  "serverUrl" : "https://localhost:5001",
+  "isDevelopment": true
+}
