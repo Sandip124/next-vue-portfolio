@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { useHead } from 'unhead'
+import BatteryNotifierBanner from '@/assets/img/BatteryNotifierBanner.png'
+import BoneappetiteBanner from '@/assets/img/BoneappetiteBanner.png'
+import ExpenseTrackerBanner from '@/assets/img/ExpenseTrackerBanner.png'
 
 useHead({
   title: 'Portfolio | Sandip Choudhary',
@@ -23,10 +26,44 @@ const items = ref([
   },
 ])
 
+const projects = ref([
+  {
+    projectName: 'Battery Notifier',
+    description: 'An beautiful windows app to track your battery charging status and notifies you when the battery is full or when you need to connect your charger',
+    banner: BatteryNotifierBanner,
+    projectUrl: 'projects/battery-notifier',
+  },
+  {
+    projectName: 'Boneappetitedk',
+    description: 'Boneappetiedk is an copenhagen based dog food preparing company which aims to provide healthy and homemade food with an option of various recipes.',
+    banner: BoneappetiteBanner,
+    projectUrl: 'projects/boneappetitedk',
+  },
+  {
+    projectName: 'Expense Tracker',
+    description: 'Expense Tracker is an dotnet core web application, one solution to manage incoming and outgoing for multiple person. It provides the ability to create workspace and manage transaction separately.',
+    banner: ExpenseTrackerBanner,
+    projectUrl: 'projects/expense-tracker',
+  },
+  {
+    projectName: 'Expense Tracker',
+    description: 'Expense Tracker is an dotnet core web application, one solution to manage incoming and outgoing for multiple person. It provides the ability to create workspace and manage transaction separately.',
+    banner: ExpenseTrackerBanner,
+    projectUrl: 'projects/expense-tracker',
+  },
+  {
+    projectName: 'Expense Tracker',
+    description: 'Expense Tracker is an dotnet core web application, one solution to manage incoming and outgoing for multiple person. It provides the ability to create workspace and manage transaction separately.',
+    banner: ExpenseTrackerBanner,
+    projectUrl: 'projects/expense-tracker',
+  },
+])
+
 const contactItems = ref([
   { label: 'LinkedIn', url: 'https://linkedin.com/in/sandip124', target: '_blank' },
   { label: 'Dribble', url: 'https://dribbble.com/Sandip124', target: '_blank' },
   { label: 'Github', url: 'https://github.com/sandip124', target: '_blank' },
+  { label: 'Twitter', url: 'https://x.com/chaudhary_sndp', target: '_blank' },
 ])
 
 const experiences = ref([
@@ -196,7 +233,7 @@ const academics = ref([
     </div>
   </div>
 
-  <div class="py-8 dark:bg-surface-950 px-4 py-20 md:px-12 lg:px-20">
+  <div class="py-8 dark:bg-surface-950 ">
     <div class="text-white text-center">
       <div class="text-surface-900 dark:text-surface-0 font-bold text-5xl mb-2">
         My Projects
@@ -206,27 +243,71 @@ const academics = ref([
       </div>
 
       <div class="grid gap-4 justify-content-center">
-        <template v-for="item in 4">
-          <Card style="width: 25rem; overflow: hidden" class="border-round-3xl">
+        <template v-for="project in projects">
+          <Card
+            style="overflow: hidden" class="border-round-3xl col-12 md:col-2 p-0 relative"
+            :pt="{
+              header: 'p-0',
+              body: 'bg-white border-round-3xl -mt-6 p-3 bottom-0 border-1 m-2 border-primary-100 h-full',
+            }"
+          >
             <template #header>
               <img
+                class="w-full"
                 alt="user header"
-                src="https://cdn.dribbble.com/users/2589332/screenshots/19777923/media/66bff58fe27167448a00d4747568e6ff.jpg?compress=1&resize=400x250&vertical=top"
+                :src="project.banner"
               >
             </template>
             <template #title>
-              <strong>Battery Notifier</strong>
+              <strong>{{ project.projectName }}</strong>
             </template>
             <template #content>
               <p class="m-0">
-                An beautiful windows app to track your battery charging status and notifies you when the battery is full
-                or when you need to connect your charger.
+                {{ project.description }}
               </p>
             </template>
             <template #footer>
-              <div class="flex gap-4 mt-1">
-                <Button label="View Project" class="w-full" rounded />
+              <div class="flex w-full gap-4 mt-1">
+                <RouterLink class="w-full" :to="project.projectUrl">
+                  <Button label="View Project" class="w-full" rounded icon="pi pi-external-link" icon-pos="right" />
+                </RouterLink>
               </div>
+            </template>
+          </Card>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-8 surface-400 dark:bg-surface-950 ">
+    <div class="text-white text-center">
+      <div class="text-surface-900 dark:text-surface-0 font-bold text-5xl mb-2">
+        My Design Projects
+      </div>
+      <div class="text-surface-700 dark:text-surface-100 text-2xl mb-8">
+        Here are my design show cases case
+      </div>
+
+      <div class="grid gap-4 justify-content-center">
+        <template v-for="project in projects">
+          <Card
+            style="overflow: hidden" class="border-round-3xl col-12 md:col-3 p-0 relative"
+            :pt="{
+              root: 'transition-all transition-duration-300 hover:shadow-5',
+              body: ' p-0 m-0',
+            }"
+          >
+            <template #header>
+              <img
+                class="w-full h-full"
+                alt="user header"
+                :src="project.banner"
+              >
+            </template>
+            <template #content>
+              <RouterLink class="absolute top-0 right-0 p-2" :to="project.projectUrl">
+                <Button label="View Project" class="w-full p-button-contrast" rounded icon="pi pi-external-link" icon-pos="right" />
+              </RouterLink>
             </template>
           </Card>
         </template>
