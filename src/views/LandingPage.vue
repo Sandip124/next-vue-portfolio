@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import ProfileImage from '@/assets/img/profile.jpg'
 
+const { copy, copied } = useClipboard()
+
 const items = ref([
   {
     label: 'chaudharysandip124@gmail.com',
@@ -30,25 +32,25 @@ const contactItems = ref([
       <Menubar
         :model="items"
         :pt="{
-          itemContent: 'bg-transparent',
+          itemContent: 'bg-transparent ',
         }"
-        class="bg-transparent border-none w-10 md:w-8 mx-auto pt-4 sticky"
+        class="bg-transparent border-none w-10 md:w-8 mx-auto pt-4 sticky justify-content-between"
       >
-        <template #item="{ item, props }">
-          <a class="flex items-center p-0 text-white bg-transparent hover:bg-transparent" v-bind="props.action">
+        <template #item="{ item }">
+          <span class="flex items-center p-0 text-white bg-transparent hover:bg-transparent no-underline">
             <template v-if="item.type === 'button'">
-              <Button severity="secondary" class="px-3" rounded> {{ item.label }}</Button>
+              <Button severity="secondary" class="px-3 py-2" rounded> {{ item.label }}</Button>
             </template>
             <template v-else-if="item.type === 'mail'">
-              <InputGroup class="bg-white-alpha-20 border-round-3xl overflow-hidden">
-                <span class="py-2 px-3">{{ item.label }} </span>
-                <Button severity="secondary" class="px-3 border-round-3xl" rounded>Copy</Button>
+              <InputGroup class="border-round-3xl overflow-hidden" :class="[{ 'bg-primary': copied }, { 'bg-white-alpha-20': !copied }]">
+                <span class="py-2 px-3 no-underline">{{ item.label }} </span>
+                <Button severity="secondary" class="px-3 border-round-3xl" rounded @click="copy(item.label)">{{ copied ? 'Copied' : 'Copy' }}</Button>
               </InputGroup>
             </template>
             <template v-else>
-              <span>{{ item.label }} </span>
+              <span class="h-full">{{ item.label }} </span>
             </template>
-          </a>
+          </span>
         </template>
         <template #end>
           <Breadcrumb :model="contactItems" class="bg-transparent text-">

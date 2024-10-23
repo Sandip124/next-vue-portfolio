@@ -1,39 +1,36 @@
 <script setup lang="ts">
 import BatteryNotifierBanner from '@/assets/img/BatteryNotifierBanner.png'
-import BoneappetiteBanner from '@/assets/img/BoneappetiteBanner.png'
-import ExpenseTrackerBanner from '@/assets/img/ExpenseTrackerBanner.png'
+import CsvPasterBanner from '@/assets/img/CsvPasterBanner.png'
+import VirtualQueueBanner from '@/assets/img/VirtualQueueBanner.png'
+import KineticStudioBanner from '@/assets/img/KineticStudioBanner.png'
+import AdbhutGamingSansarBanner from '@/assets/img/AdbhutGamingSansarBanner.png'
 import DesignCard from '@/views/DesignCard.vue'
 
 const designProjects = ref([
   {
     projectName: 'Battery Notifier',
-    description: 'An beautiful windows app to track your battery charging status and notifies you when the battery is full or when you need to connect your charger',
     banner: BatteryNotifierBanner,
-    projectUrl: 'projects/battery-notifier',
+    projectUrl: 'showcase/battery-notifier',
   },
   {
-    projectName: 'Boneappetitedk',
-    description: 'Boneappetiedk is an copenhagen based dog food preparing company which aims to provide healthy and homemade food with an option of various recipes.',
-    banner: BoneappetiteBanner,
-    projectUrl: 'projects/boneappetitedk',
+    projectName: 'Csv Paster',
+    banner: CsvPasterBanner,
+    projectUrl: 'showcase/csv-paster',
   },
   {
-    projectName: 'Expense Tracker',
-    description: 'Expense Tracker is an dotnet core web application, one solution to manage incoming and outgoing for multiple person. It provides the ability to create workspace and manage transaction separately.',
-    banner: ExpenseTrackerBanner,
-    projectUrl: 'projects/expense-tracker',
+    projectName: 'Virtual Queue',
+    banner: VirtualQueueBanner,
+    projectUrl: 'showcase/expense-tracker',
   },
   {
-    projectName: 'Expense Tracker',
-    description: 'Expense Tracker is an dotnet core web application, one solution to manage incoming and outgoing for multiple person. It provides the ability to create workspace and manage transaction separately.',
-    banner: ExpenseTrackerBanner,
-    projectUrl: 'projects/expense-tracker',
+    projectName: 'Kinetic Studio',
+    banner: KineticStudioBanner,
+    projectUrl: 'showcase/kinetic-studio',
   },
   {
-    projectName: 'Expense Tracker',
-    description: 'Expense Tracker is an dotnet core web application, one solution to manage incoming and outgoing for multiple person. It provides the ability to create workspace and manage transaction separately.',
-    banner: ExpenseTrackerBanner,
-    projectUrl: 'projects/expense-tracker',
+    projectName: 'Adbhut Gaming Sansar',
+    banner: AdbhutGamingSansarBanner,
+    projectUrl: 'showcase/adbhut-gaming-sansar',
   },
 ])
 </script>

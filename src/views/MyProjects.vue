@@ -22,18 +22,6 @@ const projects = ref([
     banner: ExpenseTrackerBanner,
     projectUrl: 'projects/expense-tracker',
   },
-  {
-    projectName: 'Expense Tracker',
-    description: 'Expense Tracker is an dotnet core web application, one solution to manage incoming and outgoing for multiple person. It provides the ability to create workspace and manage transaction separately.',
-    banner: ExpenseTrackerBanner,
-    projectUrl: 'projects/expense-tracker',
-  },
-  {
-    projectName: 'Expense Tracker',
-    description: 'Expense Tracker is an dotnet core web application, one solution to manage incoming and outgoing for multiple person. It provides the ability to create workspace and manage transaction separately.',
-    banner: ExpenseTrackerBanner,
-    projectUrl: 'projects/expense-tracker',
-  },
 ])
 </script>
 
@@ -47,10 +35,10 @@ const projects = ref([
         List of projects that i have done till now.
       </div>
 
-      <div class="grid gap-4 justify-content-center px-4">
+      <div class="grid gap-4 justify-content-center  px-4">
         <template v-for="project in projects">
           <Card
-            style="overflow: hidden" class="border-round-3xl col-12 md:col-2 p-0 relative"
+            style="overflow: hidden" class="border-round-3xl col-12 md:col-3 p-0 relative"
             :pt="{
               header: 'p-0',
               body: 'bg-white border-round-3xl -mt-6 p-3 bottom-0 border-1 m-2 border-primary-100 h-full',
@@ -74,7 +62,7 @@ const projects = ref([
             <template #footer>
               <div class="flex w-full gap-4 mt-1">
                 <RouterLink class="w-full" :to="project.projectUrl">
-                  <Button label="View Project" class="w-full" rounded icon="pi pi-external-link" icon-pos="right" />
+                  <Button label="View Project" class="w-full py-2 px-3" rounded icon="pi pi-external-link" icon-pos="right" />
                 </RouterLink>
               </div>
             </template>
