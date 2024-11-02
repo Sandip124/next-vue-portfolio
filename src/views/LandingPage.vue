@@ -11,7 +11,7 @@ const items = ref([
   {
     label: 'CV',
     type: 'button',
-    link: 'https://linkedin.com/in/sandip124',
+    link: 'https://read.cv/sandip124',
   },
 ])
 
