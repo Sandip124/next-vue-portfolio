@@ -24,10 +24,6 @@ useHead({
 
   <MyDesignProjects />
 
-  <MyExperiences />
-
-  <MyEducation />
-
   <AppFooter />
 </template>
 
