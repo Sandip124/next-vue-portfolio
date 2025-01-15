@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProfileImage from '@/assets/img/profile.jpg'
+import ProfileImage from '@/assets/img/profile_bw.jpg'
 
 const { copy, copied } = useClipboard()
 
