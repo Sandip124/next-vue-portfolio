@@ -13,5 +13,5 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden !important;
-  background: rgba(95, 25, 136, 0.8) !important;
+  background: var(--content-color) !important;
 }
